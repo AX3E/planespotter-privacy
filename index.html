@@ -1,171 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bandit — Privacy Policy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&display=swap">
-<style>
-  :root {
-    --ink: #201e1d;
-    --bone: #f3f2f2;
-    --red: #ec3013;
-    --grey1: #7d7979;
-    --grey2: #605d5d;
-    --border: rgba(32, 30, 29, .4);
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bone);
-    color: var(--ink);
-    font-family: Archivo, system-ui, -apple-system, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.55;
-  }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
-  .kicker {
-    font-size: 11px; font-weight: 600; letter-spacing: .22em;
-    color: var(--grey1); text-transform: uppercase;
-  }
-  h1 {
-    font-size: clamp(38px, 8vw, 64px); font-weight: 900; letter-spacing: -.03em;
-    line-height: .98; margin: 14px 0 6px;
-  }
-  .updated { color: var(--grey1); font-size: 13px; margin-bottom: 30px; }
-  h2 {
-    font-size: 22px; font-weight: 900; letter-spacing: -.01em;
-    margin: 40px 0 12px; padding-top: 14px; border-top: 2px solid var(--border);
-  }
-  h3 { font-size: 15px; font-weight: 800; margin: 24px 0 6px; }
-  p, li { color: var(--grey2); font-size: 15px; }
-  strong { color: var(--ink); }
-  ul { padding-left: 20px; }
-  li { margin-bottom: 6px; }
-  a { color: var(--red); text-underline-offset: 3px; }
-  table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
-  th, td {
-    text-align: left; padding: 10px 12px 10px 0;
-    border-bottom: 2px solid rgba(32, 30, 29, .16); vertical-align: top;
-  }
-  th {
-    font-size: 11px; font-weight: 600; letter-spacing: .16em;
-    text-transform: uppercase; color: var(--grey1);
-    border-bottom-color: var(--border);
-  }
-  td { color: var(--grey2); }
-  .lede {
-    background: var(--ink); color: var(--bone);
-    padding: 18px 20px; margin: 28px 0;
-  }
-  .lede p { color: var(--bone); margin: 0 0 8px; }
-  .lede p:last-child { margin-bottom: 0; }
-  .lede strong { color: #fff; }
-  footer {
-    margin-top: 56px; padding-top: 16px; border-top: 2px solid var(--border);
-    color: var(--grey1); font-size: 13px;
-  }
-</style>
-</head>
-<body>
-<div class="wrap">
-
-  <div class="kicker">Bandit for Android</div>
-  <h1>Privacy&nbsp;Policy</h1>
-  <div class="updated">Last updated: 8 September 2026</div>
-
-  <p>Bandit is a game about photographing aircraft. This policy explains
-  exactly what the app does with your camera, your location and your photos.
-  It is short because the app collects very little.</p>
-
-  <div class="lede">
-    <p><strong>Your photos never leave your phone.</strong></p>
-    <p>Your location is sent to one aviation service to find aircraft near you.
-    It is not stored by us, and it is not tied to your identity.</p>
-    <p>There are no accounts, no advertising, and no analytics of our own.</p>
-    <p>Everything the app remembers about you is stored on your phone, and is
-    deleted when you uninstall it.</p>
-  </div>
-
-  <h2>What the app uses, and why</h2>
-
-  <h3>Camera</h3>
-  <p>The app takes a photo when you press the shutter. That photo is saved in
-  the app's own private storage on your phone so it can appear in your Hangar.</p>
-  <p><strong>Photos are never uploaded.</strong> Deciding whether a photo
-  contains an aircraft happens entirely on your device, using Google's ML Kit
-  image labeling library with a model bundled inside the app. The image is not
-  sent anywhere.</p>
-
-  <h3>Location</h3>
-  <p>When you take a photo, and periodically while the Spot screen is open, the
-  app uses your device's location for two purposes:</p>
-  <ul>
-    <li><strong>Finding aircraft near you.</strong> Your approximate
-    coordinates are sent to the <a href="https://opensky-network.org">OpenSky
-    Network</a>, a public flight-tracking service, to ask which aircraft are
-    currently in the sky around you. The request is anonymous — it carries no
-    name, account or device identifier.</li>
-    <li><strong>Naming the place a photo was taken.</strong> Your coordinates
-    are turned into a place name (like "Airport Dr, Tullamarine") using the
-    geocoding service built into your phone's operating system. On Android this
-    is provided by Google.</li>
-  </ul>
-  <p>We do not store your location on any server of ours, because we do not
-  operate one. Your coordinates are saved with your spots
-  <strong>on your phone only</strong>.</p>
-
-  <h3>Aircraft identification</h3>
-  <p>To turn a detected aircraft's broadcast ID (a public Mode-S hex code,
-  which identifies an aircraft, not a person) into a type and tail number, the
-  app queries <a href="https://www.adsbdb.com">adsbdb.com</a>. Only the
-  aircraft's code is sent. Nothing about you is included.</p>
-
-  <h2>Information sent to third parties</h2>
-  <table>
-    <thead>
-      <tr><th>Service</th><th>What it receives</th><th>Why</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>OpenSky Network</td><td>Approximate coordinates</td><td>To list aircraft near you</td></tr>
-      <tr><td>adsbdb.com</td><td>An aircraft's public broadcast ID</td><td>To identify the aircraft</td></tr>
-      <tr><td>Your phone's geocoder (Google, on Android)</td><td>Coordinates of a photo</td><td>To name the location</td></tr>
-      <tr><td>Google (ML Kit)</td><td>Diagnostic and usage data about the on-device model — <strong>not your photos</strong></td><td>Collected automatically by the machine-learning library the app uses</td></tr>
-    </tbody>
-  </table>
-  <p>Each of these services has its own privacy policy governing what it does
-  with what it receives.</p>
-
-  <h2>What is stored on your phone</h2>
-  <p>Your cash, streak, unlocked aircraft, boosters, and the photos and details
-  of every spot you log. This lives in the app's private storage. It is not
-  backed up to us or synced anywhere.</p>
-
-  <h2>Deleting your data</h2>
-  <p>Uninstalling Bandit deletes all of it. You can also clear it without
-  uninstalling: Settings → Apps → Bandit → Storage → Clear storage. There
-  is nothing held elsewhere for us to delete on request, because we hold
-  nothing.</p>
-
-  <h2>Accounts, advertising and tracking</h2>
-  <p>The app has no sign-in, shows no advertising, and does not track you
-  across apps or websites. Nothing is sold or shared for marketing.</p>
-
-  <h2>Children</h2>
-  <p>Bandit is not directed at children under 13 and does not knowingly
-  collect information from them.</p>
-
-  <h2>Changes</h2>
-  <p>If this policy changes, the updated version will be published at this same
-  address with a new date at the top.</p>
-
-  <h2>Contact</h2>
-  <p>Questions about this policy: <a href="mailto:ashtonberends11@gmail.com">ashtonberends11@gmail.com</a></p>
-
-  <footer>Bandit — Android</footer>
-
-</div>
-</body>
-</html>
+<style>body{margin:0;background:#f3f2f2;color:#201e1d;font:16px/1.6 system-ui,-apple-system,sans-serif}.wrap{max-width:780px;margin:auto;padding:48px 24px 80px}h1{font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0}.k{color:#7d7979;text-transform:uppercase;letter-spacing:.18em;font-size:12px}h2{border-top:2px solid #777;padding-top:18px;margin-top:38px}a{color:#d52b12}.box{background:#201e1d;color:#fff;padding:20px;margin:28px 0}li{margin:.5em 0}nav a{margin-right:18px}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #aaa;padding:10px 12px 10px 0}</style></head>
+<body><main class="wrap"><nav><a href="delete-account.html">Delete account</a><a href="terms.html">Terms</a></nav>
+<p class="k">Bandit: Plane Spotter</p><h1>Privacy Policy</h1><p>Last updated: 12 September 2026</p>
+<p>Bandit is a game about photographing aircraft. This policy explains what the app does with your account, progress, camera, location, photographs and squad activity.</p>
+<div class="box"><strong>You can play without an account.</strong> If you create one, Bandit uses Google Firebase Authentication and Cloud Firestore for sign-in, progress backup, global rankings and squads. Full photographs are not uploaded or backed up. Bandit has no advertising and does not track you across apps or websites.</div>
+<h2>Signing in and game progress</h2><p>Bandit remains playable signed out. Cloud backup, global rankings and squads require an account. Creating one uses the email address, password and public display name you provide. Firebase Authentication handles the password; Bandit never receives it in readable form.</p><p>When signed in, Cloud Firestore stores your display name, cards, scores, achievements, purchases made with earned in-game currency, logbook entries, spotting sessions, squad membership and related game progress so it can be restored on another device.</p><p>Global rankings are visible only to signed-in players. They contain your chosen display name, lifetime spot, cash and XP totals, recent daily totals and the score update time. They do not contain your email address, photographs, notes or location.</p>
+<h2>Camera and photographs</h2><p>Bandit saves photographs in private storage on your device. Google's ML Kit image-labeling library checks for an aircraft on the device using a model bundled in the app. Photographs are not sent to ML Kit or another image-analysis service.</p><p><strong>Full photographs stay on the device where they were taken.</strong> They are not uploaded or included in the current Firebase backup. A restored sighting may show a placeholder on another device.</p>
+<h2>Location</h2><p>While the Spot screen is open, Bandit uses your location to:</p><ol><li>Find nearby aircraft through the OpenSky Network, or ADSB.lol using coordinates rounded to two decimal places if OpenSky is unavailable. These requests contain no Bandit account or device identifier.</li><li>Name the place where a photograph was taken using the operating-system geocoder. Google provides this service on Android.</li><li>Save the location of a logged sighting. Signed-in players include the record in their private Firebase progress backup.</li><li>Check for interesting aircraft near the last location used while the app was open, if alerts are enabled. Bandit does not request background-location permission and discards that alert location after six hours.</li></ol>
+<h2>Squads and Binder sharing</h2><p>Squad members see each other's chosen display names and scores. Squad sightings include the aircraft, callsign when available, time, place name and coordinates.</p><p>Binder sharing is optional and starts off. If enabled, current squad members can see allowlisted card details such as aircraft identity, rarity, condition and capture date. Full photographs, notes, account email, balance and private backup are not shared. The current service has no cloud photo storage, so shared thumbnails are not uploaded.</p>
+<h2>Service providers</h2><table><thead><tr><th>Service</th><th>Information</th><th>Purpose</th></tr></thead><tbody><tr><td>Firebase Authentication</td><td>Email, password credential and account identifier</td><td>Account creation, sign-in and password reset</td></tr><tr><td>Cloud Firestore</td><td>Display name, game progress, sighting locations, rankings and squad data</td><td>Backup, restore, rankings and squads</td></tr><tr><td>OpenSky Network</td><td>Current coordinates</td><td>Find nearby aircraft</td></tr><tr><td>ADSB.lol</td><td>Coordinates rounded to two decimal places</td><td>Backup aircraft feed</td></tr><tr><td>adsbdb.com</td><td>Aircraft public broadcast identifier</td><td>Identify aircraft</td></tr><tr><td>Android geocoder</td><td>Sighting coordinates</td><td>Name the location</td></tr><tr><td>Google ML Kit</td><td>SDK diagnostic and usage information; not photos</td><td>Operate and improve the on-device library</td></tr></tbody></table>
+<p>Firebase Authentication processes authentication data in the United States. Cloud Firestore for Bandit is configured in Melbourne, Australia, although Google may process service data through its global infrastructure. See <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a>.</p>
+<h2>Security and retention</h2><p>Firebase encrypts data in transit and at rest. Firestore rules restrict private backups to the signed-in account and squad data to current members. Bandit keeps cloud data while the account exists. Backup revisions may retain earlier progress so restores are reliable.</p>
+<h2 id="delete-account">Deleting data or an account</h2><p>Remove local data by uninstalling Bandit or using Android Settings → Apps → Bandit → Storage → Clear storage.</p><p>To delete a Bandit account and its Firebase data, follow the <a href="delete-account.html">account deletion instructions</a>. You may email <a href="mailto:ashtonberends11@gmail.com?subject=Delete%20my%20Bandit%20account">ashtonberends11@gmail.com</a> from the account address with the subject “Delete my Bandit account”. Requests are completed within 30 days. Signing out does not delete an account.</p>
+<h2>Advertising, tracking and children</h2><p>Bandit shows no advertising, does not sell personal information and does not track people across apps or websites. Bandit is not directed at children under 13 and does not knowingly collect their information.</p>
+<h2>Changes and contact</h2><p>Updates are published here with a new date. Questions: <a href="mailto:ashtonberends11@gmail.com">ashtonberends11@gmail.com</a>.</p></main></body></html>
