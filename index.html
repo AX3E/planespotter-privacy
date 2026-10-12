@@ -1,19 +1,464 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bandit — Privacy Policy</title>
-<style>body{margin:0;background:#f3f2f2;color:#201e1d;font:16px/1.6 system-ui,-apple-system,sans-serif}.wrap{max-width:780px;margin:auto;padding:48px 24px 80px}h1{font-size:clamp(38px,8vw,64px);line-height:1;margin:.25em 0}.k{color:#7d7979;text-transform:uppercase;letter-spacing:.18em;font-size:12px}h2{border-top:2px solid #777;padding-top:18px;margin-top:38px}a{color:#d52b12}.box{background:#201e1d;color:#fff;padding:20px;margin:28px 0}.box ul{margin:.5em 0 0;padding-left:1.2em}li{margin:.5em 0}nav a{margin-right:18px}table{border-collapse:collapse;width:100%}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #aaa;padding:10px 12px 10px 0}</style></head>
-<body><main class="wrap"><nav><a href="delete-account.html">Delete account</a><a href="terms.html">Terms</a></nav>
-<p class="k">Bandit: Plane Spotter</p><h1>Privacy Policy</h1><p>Last updated: 30 September 2026</p>
-<p>Bandit is a game about photographing aircraft. This policy explains what the app does with your account, progress, camera, location and photographs, and what your squad and friends can see.</p>
-<div class="box"><strong>The short version</strong><ul><li>You can play without an account. Signed-out progress and photographs remain on your device.</li><li>If you create an account, Bandit uses Google Firebase to sign you in, publish your display name and scores, run squads and friends, and back up your cards, scores, logbook and other game progress, including compressed copies of your photographs.</li><li>Location is used to find nearby aircraft and is stored with logged sightings. Signed-in players include those sighting records in their private backup.</li><li>Global rankings show your chosen display name and game statistics to other signed-in players. Squad members and friends can see the information described below. They see your photographs only if you turn on Binder sharing.</li><li>Bandit has no advertising and does not track you across apps or websites.</li></ul></div>
-<h2>Signing in and game progress</h2><p>Bandit starts without an account and remains playable signed out. Cloud backup, global rankings, squads and friends require an account. Creating an account uses the email address, password and public display name you provide. Google Firebase Authentication handles the password; Bandit never receives it in readable form.</p><p>When you are signed in, Bandit stores your email address and authentication record in Firebase Authentication. Cloud Firestore stores your display name, cards, scores, achievements, purchases made with earned in-game currency, logbook entries, spotting sessions, squad membership, friends and related game progress. This data is linked to your account so it can be restored on another device.</p><p>Global rankings are visible only to signed-in players. They contain your chosen display name and game statistics: lifetime spot, cash and XP totals, level, prestige, badge count, counts of the aircraft types, tail numbers and rarities you have collected, recent daily totals and the time the score was updated. They do not contain your email address, photographs, notes or location.</p>
-<h2>Camera and photographs</h2><p>Bandit takes a photograph when you press the shutter and saves it in the app's private storage on your device. Google's ML Kit image-labeling library checks for an aircraft on the device using a model bundled in the app. Photographs are not sent to ML Kit or to another image-analysis service.</p><p>When you are signed in, Bandit also backs up a copy of each photograph to your account in Firebase Storage so it can be restored on another device. Backup copies are JPEG images no more than 2048 pixels on the longer side, and camera metadata, including any embedded location, is removed before upload. The originals on your phone are not changed. Only your account can read its backup copies. Signed out, photographs stay on the device where they were taken.</p>
-<h2>Location</h2><p>While the Spot screen is open, Bandit uses your location to:</p><ol><li>Find nearby aircraft. Bandit asks one of two aircraft-tracking services and falls back to the other when it is unavailable: ADSB.lol, which receives coordinates rounded to two decimal places, and the OpenSky Network. Signed-in players with a verified app reach OpenSky through Bandit's Firebase traffic service in Australia, which keeps the OpenSky credential out of the app. Signed-out or unverified apps ask OpenSky directly. Direct traffic-feed requests contain no Bandit account or device identifier.</li><li>Name the place where a photograph was taken, using the geocoding service provided by the operating system. Google provides this service on Android.</li><li>Save the location of a logged sighting. Signed-in players include this record in their private Firebase progress backup.</li><li>Check for interesting aircraft near the last location used while the app was open, if alerts are enabled. On Android, Bandit does not request background-location permission and discards a remembered alert location after six hours.</li></ol><p>On iPhone, if you turn on aircraft alerts and choose to allow location access “Always”, Bandit also uses your location while the app is closed: iOS tells Bandit when your phone has moved a significant distance, and Bandit uses that position, or your current position when it checks in the background, to look for interesting aircraft near you. That position is used only for the nearby-traffic request described in item 1 and to decide whether to show an alert on your phone. It is not added to your sightings, your backup or your squad, and is not otherwise uploaded. You can turn this off at any time in the iPhone Settings app under Bandit, or by turning off aircraft alerts.</p><p>The radar and logbook maps show satellite imagery from Esri's ArcGIS World Imagery service. Each map-tile request tells Esri which area is being shown — around you on the radar, or around a logged sighting in the logbook — and, like any web request, your IP address. It contains no Bandit account or device identifier.</p>
-<h2>Squads, friends and Binder sharing</h2><p>A squad is a small group joined with an invitation code. Squad members can see each other's chosen display names and scores. Squad sightings include the aircraft, callsign when available, time, place name and coordinates of the sighting.</p><p>You can also add other signed-in players as friends. A friend request or squad invitation shows your display name to the player you send it to. Friends can see your profile: your display name, prestige, badges, featured aircraft and showcase card, and the cosmetics you have equipped.</p><p>Binder sharing is optional and starts off. If you turn it on, your squad members and friends can see the cards you share: allowlisted details such as aircraft identity, rarity, condition, capture date and flight details, and a reduced-size copy of each card's photograph, stored in Firebase Storage with camera metadata, including location, removed. Notes, account email, balance, full-size photographs and your private backup are not shared. Access ends when you turn sharing off, leave the squad or remove the friend.</p>
-<h2>Aircraft identification and alerts</h2><p>Bandit sends an aircraft's public Mode-S hex code, registration or callsign to adsbdb.com, ADSB.lol, the OpenSky Network and planespotters.net to find its type, registration, route, the path it has flown and a photograph of it. These requests contain no information about you.</p><p>Alerts are composed on the device from aircraft data already fetched by Bandit. There is no advertising or marketing notification service.</p>
-<h2>Service providers</h2><table><thead><tr><th>Service</th><th>Information</th><th>Purpose</th></tr></thead><tbody><tr><td>Google Firebase Authentication</td><td>Email address, password credential and account identifier</td><td>Account creation, sign-in and password reset</td></tr><tr><td>Google Cloud Firestore</td><td>Display name, game progress, logged sighting locations, rankings, squad and friends data</td><td>Backup, restore, rankings, squads and friends</td></tr><tr><td>Google Cloud Storage for Firebase</td><td>Signed-in player's backup photo copies, and shared card photo copies when Binder sharing is on</td><td>Photo backup, restore and Binder sharing</td></tr><tr><td>Google Cloud Functions</td><td>Signed-in player's current coordinates and Firebase authentication/App Check tokens</td><td>Securely relay an OpenSky traffic request</td></tr><tr><td>ADSB.lol</td><td>Coordinates rounded to two decimal places; aircraft public broadcast identifiers</td><td>Find and identify nearby aircraft</td></tr><tr><td>OpenSky Network</td><td>Current coordinates; aircraft public broadcast identifiers</td><td>Find nearby aircraft and the paths they have flown</td></tr><tr><td>adsbdb.com</td><td>Aircraft public broadcast identifiers and callsigns</td><td>Identify aircraft and their routes</td></tr><tr><td>planespotters.net</td><td>Aircraft public broadcast identifier or registration</td><td>Show a photograph of the aircraft</td></tr><tr><td>Esri (ArcGIS World Imagery)</td><td>The map area being shown</td><td>Satellite map imagery</td></tr><tr><td>Operating-system geocoder (Google on Android)</td><td>Sighting coordinates</td><td>Name the location</td></tr><tr><td>Google ML Kit</td><td>SDK diagnostic and usage information; not photographs</td><td>Operate and improve the on-device library</td></tr></tbody></table>
-<p>Firebase Authentication processes authentication data in the United States. Cloud Firestore and Firebase Storage for this app are configured in Sydney, Australia, although Google may process service data through its global infrastructure. See <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a>.</p>
-<h2>Storage, security and retention</h2><p>Firebase encrypts data in transit and at rest. Firestore and Storage rules restrict private backup records and photo copies to the signed-in account, restrict squad data to current squad members, and restrict shared cards to current squad members and friends while Binder sharing is on. Global ranking fields are deliberately limited to the fields described above.</p><p>Bandit keeps cloud account data while the account exists. Backup revisions may retain earlier versions of game progress and photo copies so restores are reliable. Deleting the account deletes the Firebase Authentication account and associated Firebase data, including photo copies. We do not retain account data after deletion unless required by law or needed briefly to complete the deletion request.</p>
-<h2 id="delete-account">Deleting data or an account</h2><p>Remove local data by uninstalling Bandit or, on Android, using Settings → Apps → Bandit → Storage → Clear storage.</p><p>To delete a Bandit account and its Firebase data, follow the <a href="delete-account.html">account deletion instructions</a>. You may email <a href="mailto:banditplanespotter@gmail.com?subject=Delete%20my%20Bandit%20account">banditplanespotter@gmail.com</a> from the account address with the subject “Delete my Bandit account”. Requests are completed within 30 days. Signing out does not delete an account.</p>
-<h2>Advertising, tracking and children</h2><p>Bandit shows no advertising, does not sell personal information and does not track people across apps or websites. Bandit is not directed at children under 13 and does not knowingly collect their information.</p>
-<h2>Changes and contact</h2><p>Updates are published here with a new date. Questions: <a href="mailto:banditplanespotter@gmail.com">banditplanespotter@gmail.com</a>.</p></main></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bandit ��� Privacy Policy</title>
+  <style>
+    body { margin: 0; background: #f3f2f2; color: #201e1d; font: 16px/1.6 system-ui, -apple-system, sans-serif; }
+    .wrap { max-width: 780px; margin: auto; padding: 48px 24px 80px; }
+    h1 { font-size: clamp(34px, 7vw, 56px); line-height: 1.05; margin: .25em 0; }
+    h2 { border-top: 2px solid #777; padding-top: 18px; margin-top: 38px; }
+    h3 { margin-top: 28px; }
+    .k { color: #7d7979; text-transform: uppercase; letter-spacing: .18em; font-size: 12px; }
+    a { color: #d52b12; }
+    nav a { margin-right: 18px; }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; display: block; overflow-x: auto; }
+    th, td { border: 1px solid #c9c6c6; padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: #e6e4e4; }
+    code { background: #e6e4e4; padding: 0 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav><a href="index.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a></nav>
+    <p class="k">Bandit: Plane Spotter</p>
+<h1 id="bandit--privacy-policy">Bandit — Privacy Policy</h1>
+<p><strong>Last updated: 12 October 2026</strong></p>
+<p>Bandit: Plane Spotter ("Bandit", "the app") is a game about
+photographing aircraft. It is operated by <strong>Bandit: Plane
+Spotter</strong>, Melbourne, Victoria, Australia ("we", "us"). This
+policy explains what the app does with your account, progress, camera,
+location and photographs, who can see them, and the choices you have.
+Questions, requests and complaints: <strong><a
+href="mailto:banditplanespotter@gmail.com">banditplanespotter@gmail.com</a></strong>.</p>
+<h2 id="the-short-version">The short version</h2>
+<ul>
+<li>You can play without an account. Signed out, your progress and
+photographs stay on your phone.</li>
+<li>If you create an account, we use Google Firebase to sign you in,
+back up your cards, scores, logbook and compressed copies of your
+photographs, publish your display name and scores, and run squads and
+friends.</li>
+<li>Location is used to find aircraft near you. It is saved with each
+sighting. Signed in, those sightings are part of your private
+backup.</li>
+<li>Global rankings show your display name and game statistics to every
+signed-in player. Friends and squad members see more, as described
+below. They see your photographs only if you turn on Binder sharing, and
+Binder sharing starts off.</li>
+<li>Bandit has no advertising, does not sell your information, and does
+not track you across other companies' apps or websites.</li>
+<li>Release builds send crash reports to Firebase Crashlytics, including
+when you are signed out, unless you switch that off in Account ›
+Privacy.</li>
+<li>You can ask us to delete your account and its data at any time (see
+<em>Deleting your data</em>).</li>
+</ul>
+<h2 id="who-can-use-bandit">Who can use Bandit</h2>
+<p>Bandit is for people <strong>13 and over</strong>, with or without an
+account. If you are under 18, ask a parent or guardian before you create
+an account or turn on sharing, and ask them to help with the choices
+below. We do not knowingly collect personal information from children
+under 13; if you believe a child has created an account, email us and we
+will delete it.</p>
+<h2 id="signing-in-is-optional">Signing in is optional</h2>
+<p>Bandit starts without an account and stays playable signed out. Cloud
+backup, global rankings, squads and friends need an account. You can
+create one with an email address, a password and a public display name,
+or sign in with Google (Android and iPhone) or Apple (iPhone). Firebase
+Authentication handles your password; Bandit never receives it in
+readable form. With Google or Apple, that company tells Firebase your
+email address (with Apple, the private relay address if you chose Hide
+My Email) and your name. Bandit keeps only the first word of that name
+as your public display name, and asks you straight away whether to keep
+it or choose another. Bandit never receives your Google or Apple
+password.</p>
+<p>Your display name is public to other signed-in players, so do not use
+your full name, your address or anything you would not want strangers to
+read.</p>
+<h2 id="information-bandit-uses">Information Bandit uses</h2>
+<h3 id="account-and-game-progress">Account and game progress</h3>
+<p>When you are signed in, Firebase Authentication stores your email
+address, sign-in method and an account identifier. Cloud Firestore
+stores your display name, cards, scores, achievements, purchases made
+with earned in-game currency, logbook entries, squad membership, friends
+and related game progress, so it can be restored on another phone.
+In-game cash, crates and boosters are earned by playing; they cannot be
+bought with real money and have no cash value.</p>
+<p>Global rankings are visible only to signed-in players. They contain
+your chosen display name and game statistics: lifetime spot, cash and XP
+totals, level, prestige, badge count, counts of the aircraft types, tail
+numbers and rarities you have collected, recent daily totals, an
+equipped callsign plate and the time the score was updated. They do not
+contain your email address, photographs, notes or location.</p>
+<h3 id="camera-and-photographs">Camera and photographs</h3>
+<p>Bandit takes a photograph when you press the shutter and saves it in
+the app's private storage on your phone. Google's ML Kit image-labeling
+library checks the photograph for an aircraft on the phone, using a
+model bundled in the app. Photographs are not sent to ML Kit's servers
+or to any other image-analysis service.</p>
+<p>When you are signed in, Bandit also backs up a copy of each
+photograph to your account in Firebase Storage so it can be restored on
+another phone. Backup copies are JPEG images no more than 2048 pixels on
+the longer side, and camera metadata, including any embedded location,
+is removed before upload. The originals on your phone are not changed.
+Only your account can read its backup copies. When you delete a
+photograph or a card in the app, its backup copy is deleted too. Signed
+out, photographs stay on the phone where they were taken.</p>
+<p>Your phone's own backup can also include Bandit. On iPhone, iCloud
+Backup includes Bandit's saved progress and its full-size photographs.
+On Android, Google's device backup includes Bandit's saved progress but
+not its photographs; Android's phone-to-phone transfer brings both.
+These backups belong to your Apple or Google account and its settings;
+Bandit does not receive or read them.</p>
+<p>On Android you can turn on <strong>Back up photos to Google
+Drive</strong> in Settings. Bandit then copies your full-size
+photographs into Google Drive's hidden app data folder in your own
+Google account, and can download them again on another phone. Bandit
+asks Google only for access to its own app data folder (the
+<code>drive.appdata</code> permission), which cannot see your other
+Drive files. The copies use your Drive storage and we cannot access
+them. Turning the backup off stops new uploads; to delete the copies,
+remove Bandit's hidden app data in Google Drive (Settings › Manage apps
+on drive.google.com).</p>
+<p>You can put a picture of your own on a card: a JPEG you choose with
+Import a camera photo, or one you take with your phone's own camera app
+through Card photo with your camera app. Bandit receives only that one
+picture and stores, backs up and shares it as it would a photograph it
+took itself. The other camera app may keep its own copy under its own
+settings. When you choose Save photo to phone, a copy is added to your
+photo library; Bandit asks only to add to your library and never reads
+it.</p>
+<p><strong>Take care with what is in your photographs.</strong> Bandit
+is meant for pictures of aircraft. If other people, vehicles or private
+property appear in a photo, they stay on your phone and in your own
+backup unless you choose to share the card (see <em>Binder
+sharing</em>). Do not share photographs you do not have the right to
+share.</p>
+<h3 id="location">Location</h3>
+<p>Bandit asks for your precise location while you use it. It is used
+to:</p>
+<ol type="1">
+<li><strong>Find nearby aircraft.</strong> Bandit asks two
+aircraft-tracking services, ADSB.lol and, when it is slow or
+unavailable, adsb.fi. Each receives coordinates rounded to two decimal
+places (roughly a kilometre) and, like any web request, your IP address.
+The requests contain no Bandit account or device identifier.</li>
+<li><strong>Name the place</strong> where a photograph was taken, using
+the geocoding service built into your phone's operating system (Apple on
+iPhone, Google on Android).</li>
+<li><strong>Save the location of a logged sighting</strong> with the
+sighting. Signed in, this is part of your private backup. It is not
+shown to squad members or friends: squad feeds and friends' logbooks
+show the aircraft and the time, not where you were.</li>
+<li><strong>Check for interesting aircraft</strong> near the last place
+you used the app, if you turn on alerts. On Android, Bandit does not
+request background-location permission and discards the remembered
+location after six hours.</li>
+</ol>
+<p>On iPhone, if you turn on aircraft alerts and choose to allow
+location access "Always", Bandit also uses your location while the app
+is closed: iOS tells Bandit when your phone has moved a significant
+distance, and Bandit uses that position, or your current position when
+it checks in the background, to look for interesting aircraft near you.
+That position is used only for the nearby-traffic request in item 1 and
+to decide whether to show an alert on your phone. It is not added to
+your sightings, your backup or your squad. You can turn this off at any
+time in the iPhone Settings app under Bandit, or by turning off aircraft
+alerts.</p>
+<p>The radar and logbook maps are drawn from <strong>Mapbox</strong>
+(satellite, street and terrain imagery, with OpenStreetMap data). Each
+map-tile request tells Mapbox which area is being shown, which is around
+you on the radar or around a sighting in your logbook, and your IP
+address. It contains no Bandit account or device identifier.</p>
+<h3 id="squads-friends-rankings-and-binder-sharing">Squads, friends,
+rankings and Binder sharing</h3>
+<p>A squad is a small group joined with an invitation code. Squad
+members can see each other's display names and scores, and a feed of
+squad sightings: the aircraft type, callsign when available, the
+member's name and the time.</p>
+<p>You can add other signed-in players as friends. A friend request or
+squad invitation shows your display name to the person you send it to.
+Friends can see your profile: your display name, prestige, badges,
+featured aircraft and showcase card, and the cosmetics you have
+equipped.</p>
+<p><strong>Binder sharing</strong> is optional and starts off. If you
+turn it on, your squad members and friends can see the cards you share:
+aircraft identity, rarity, condition, capture date, flight details such
+as callsign and route, and a reduced-size copy of each card's
+photograph, stored in Firebase Storage with camera metadata, including
+location, removed. Notes, your email address, balance, full-size
+photographs and your private backup are not shared.</p>
+<p>While Binder sharing is on, your friends (not squad members who are
+not also friends) can also open your logbook from your profile. It shows
+the aircraft you logged, when, the flight's route and airline, rarity
+and milestones, with the reduced-size card photographs. It does not
+include the logbook's map, where you were, your notes, an aircraft's
+registered owner or what a capture earned.</p>
+<p>Friends can react to a shared card with a heart or an emoji. You see
+how many of each reaction a card has, not who gave them.</p>
+<p><strong>Reporting and blocking.</strong> On another player's profile
+you can report them (an offensive name, bothering you, inappropriate
+content, cheating or something else, with an optional note) or block
+them. A report records your account identifier, the reported player's
+identifier and name, where you met them, the reason and your note; it is
+readable only by us, is not shown to the reported player, and is kept
+for as long as needed to act on it and to protect other players. A block
+is stored in your own account: it hides that player from your Ranks
+board and squad feed, ends any friendship, and stops them sending you
+friend requests or squad invitations. They are not told. You can unblock
+in Account › Friends › Blocked players. Display names and squad names
+are also checked against a list of objectionable words when you choose
+them.</p>
+<p>Access ends when you turn sharing off, leave the squad or remove the
+friend, but a friend who has already seen something may remember it or
+have taken a screenshot. Share only with people you trust.</p>
+<h3 id="aircraft-identification">Aircraft identification</h3>
+<p>Bandit sends an aircraft's public Mode-S hex code, registration or
+callsign to adsbdb.com, ADSB.lol, adsb.fi and planespotters.net to find
+its type, registration, route, the path it has flown and a photograph of
+it. These requests contain no information about you beyond the IP
+address any web request carries. The photographs from planespotters.net
+belong to their photographers and are shown with a credit and a link
+back.</p>
+<p>The Logbook can show an airline's logo, fetched from FlightAware by
+airline code. The request carries the airline's code and your IP
+address.</p>
+<p>Australian aircraft types are identified on the phone from the Civil
+Aviation Safety Authority's aircraft register (reduced to registration
+mark and type; licensed under <a
+href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>),
+which sends nothing anywhere.</p>
+<h3 id="alerts-and-home-screen-widgets">Alerts and home-screen
+widgets</h3>
+<p>Alerts are composed on your phone from aircraft data it already
+fetched. We operate no push-notification server and there is no
+marketing notification service.</p>
+<p>The optional home-screen widgets (Progress, Last Catch and Sky Now)
+show your level and streak, your newest photographs and a map of the
+aircraft near the last place you used the app. The app writes what they
+show into storage on your phone that only Bandit and its widgets can
+read. Anyone who can see your home screen or lock screen can see what a
+widget shows, so remove or hide a widget if that matters to you. Tapping
+Sky Now asks the traffic and map services in <em>Location</em> for an
+update around your last known position.</p>
+<h3 id="crash-and-error-reports">Crash and error reports</h3>
+<p>Release builds use Firebase Crashlytics for app stability. Reports
+can include app version, device and operating-system information, a
+Crashlytics installation identifier, crash stacks and technical failure
+categories. Bandit does not set your account identifier in Crashlytics
+or attach photographs, sighting locations, email addresses, tokens or
+the exportable local debug log. Dart error reports include the exception
+type and source-code stack frames; raw exception messages are omitted
+because they may contain private file paths or server responses. Reports
+are used to diagnose faults, not for advertising. You can turn them off
+at any time in Account › Privacy › Send crash reports. The detailed
+on-device debug log leaves your phone only if you export and send
+it.</p>
+<h3 id="security-of-the-app-itself">Security of the app itself</h3>
+<p>When you are signed in, Firebase App Check uses Play Integrity
+(Android) or Apple App Attest (iPhone) to confirm requests come from a
+genuine copy of Bandit. That check sends device-integrity signals to
+Google or Apple under their own policies.</p>
+<h2 id="service-providers-and-other-recipients">Service providers and
+other recipients</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Service</th>
+<th>Information</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Google Firebase Authentication</td>
+<td>Email address, password credential, sign-in method, account
+identifier</td>
+<td>Account creation, sign-in, password reset</td>
+</tr>
+<tr class="even">
+<td>Google Cloud Firestore</td>
+<td>Display name, game progress, logged sighting locations, rankings,
+squad and friends data, block lists and player reports</td>
+<td>Backup, restore, rankings, squads, friends, safety</td>
+</tr>
+<tr class="odd">
+<td>Google Cloud Storage for Firebase</td>
+<td>Backup photo copies; shared card photo copies when Binder sharing is
+on</td>
+<td>Photo backup, restore, Binder sharing</td>
+</tr>
+<tr class="even">
+<td>Google Cloud Functions</td>
+<td>The account identifier and Firebase authentication and App Check
+tokens</td>
+<td>Delete an account</td>
+</tr>
+<tr class="odd">
+<td>Google Firebase App Check (Play Integrity / Apple App Attest)</td>
+<td>Device-integrity signals</td>
+<td>Confirm requests come from a genuine app</td>
+</tr>
+<tr class="even">
+<td>Google Firebase Crashlytics</td>
+<td>Crash reports, technical failure categories, app and device
+information, an installation identifier</td>
+<td>Diagnose crashes and improve stability</td>
+</tr>
+<tr class="odd">
+<td>Google Sign-In / Sign in with Apple</td>
+<td>Email address, name</td>
+<td>Optional sign-in</td>
+</tr>
+<tr class="even">
+<td>ADSB.lol</td>
+<td>Coordinates rounded to two decimal places; aircraft public
+identifiers; IP address</td>
+<td>Find and identify nearby aircraft</td>
+</tr>
+<tr class="odd">
+<td><a href="https://adsb.fi/">adsb.fi</a></td>
+<td>Coordinates rounded to two decimal places; IP address</td>
+<td>Find nearby aircraft</td>
+</tr>
+<tr class="even">
+<td>adsbdb.com</td>
+<td>Aircraft public identifiers and callsigns; IP address</td>
+<td>Identify aircraft and their routes</td>
+</tr>
+<tr class="odd">
+<td>planespotters.net</td>
+<td>Aircraft public identifier or registration; IP address</td>
+<td>Show a photograph of the aircraft</td>
+</tr>
+<tr class="even">
+<td>Mapbox (with OpenStreetMap data)</td>
+<td>The map area being shown; IP address</td>
+<td>Map imagery</td>
+</tr>
+<tr class="odd">
+<td>FlightAware</td>
+<td>Airline codes of the operators in your Logbook; IP address</td>
+<td>Show airline logos</td>
+</tr>
+<tr class="even">
+<td>Operating-system geocoder (Apple on iPhone, Google on Android)</td>
+<td>Sighting coordinates</td>
+<td>Name the location</td>
+</tr>
+<tr class="odd">
+<td>Google ML Kit</td>
+<td>SDK diagnostic and usage information; not photographs</td>
+<td>Operate the on-device photo check</td>
+</tr>
+<tr class="even">
+<td>Google Drive (only if you turn it on, Android)</td>
+<td>Your full-size photographs, into your own Drive's app data
+folder</td>
+<td>Photo backup and restore to your own Google account</td>
+</tr>
+</tbody>
+</table>
+<p>We do not sell personal information and do not share it for
+advertising. We disclose it to the providers above to run the app, to
+other players as described in <em>Squads, friends, rankings and Binder
+sharing</em>, and where the law requires or to protect people from harm.
+If the app were sold or transferred, your information could move with
+it, subject to this policy.</p>
+<h2 id="where-information-is-processed">Where information is
+processed</h2>
+<p>Cloud Firestore and Firebase Storage for Bandit are configured in
+Sydney, Australia, and the account-deletion function runs in Australia.
+Firebase Authentication processes data in the United States, and Google,
+Mapbox and the aircraft-data services may process data in other
+countries, including the United States and Europe. When your information
+is sent overseas we rely on the provider's own safeguards (for Google,
+its published data-processing terms) and take reasonable steps to make
+sure the provider handles it consistently with this policy. Google
+describes its practices in <a
+href="https://firebase.google.com/support/privacy">Privacy and Security
+in Firebase</a>.</p>
+<h2 id="storage-security-and-retention">Storage, security and
+retention</h2>
+<p>Firebase encrypts data in transit and at rest. Firestore and Storage
+rules limit private backups and photo copies to the signed-in account,
+squad data to current squad members, and shared cards and the shared
+logbook to current squad members or friends while Binder sharing is on.
+Global ranking fields are limited to those described above. No system is
+perfectly secure; protect your password and your phone.</p>
+<p>We keep cloud account data while the account exists. Earlier backup
+revisions can be kept so a restore is reliable, and a card or photograph
+you delete in the app is removed from your current cloud copies. After
+you delete your account we delete your cloud data and do not keep it,
+except for what the law requires us to keep or what is needed briefly to
+finish the deletion; routine Google backups of the deleted data are
+overwritten on Google's normal cycle. Reports about a player are kept
+for as long as needed to act on them. Crash reports are kept by
+Crashlytics for its standard period (currently 90 days). Data on your
+phone stays until you delete it or uninstall.</p>
+<h2 id="your-choices-and-rights">Your choices and rights</h2>
+<ul>
+<li><strong>Access and correction.</strong> You can see most of what we
+hold in the app. Email us for a copy or to correct anything you cannot
+change yourself.</li>
+<li><strong>Delete.</strong> See <em>Deleting your data</em> below.</li>
+<li><strong>Permissions.</strong> You can turn off camera, location,
+motion, notifications and Google Drive backup at any time in your
+phone's settings or in the app. Without location, Bandit cannot find
+aircraft near you.</li>
+<li><strong>Sharing.</strong> Binder sharing is off by default and you
+can switch it off at any time, leave a squad, or remove a friend.</li>
+<li><strong>Crash reports.</strong> Switch them off in Account ›
+Privacy; email us if you want your Crashlytics installation identifier
+deleted.</li>
+<li><strong>Everyone, wherever you live.</strong> If you are in the
+European Economic Area, the United Kingdom, California or another place
+with a privacy law, you may also have the right to object to or restrict
+processing, to receive your data in a portable form, and to withdraw
+consent you gave. Our reasons for using your information are: to provide
+the app you asked for (accounts, backup, rankings, squads), your consent
+where you grant a permission or switch on a feature, our legitimate
+interest in keeping the app secure and working (crash reports, App
+Check) and legal obligations. We do not sell or share personal
+information for cross-context behavioural advertising, and we do not use
+it for automated decisions that have legal effect on you.</li>
+<li><strong>Complaints.</strong> Email us first and we will reply within
+30 days. If you are in Australia and are not satisfied, you can complain
+to the Office of the Australian Information Commissioner (oaic.gov.au);
+elsewhere, to your local data-protection authority.</li>
+</ul>
+<h2 id="deleting-your-data">Deleting your data</h2>
+<p>You can remove local data by uninstalling Bandit or, on Android,
+using Settings → Apps → Bandit → Storage → Clear storage.</p>
+<p><strong>To delete your account, open Account in the app and choose
+Delete account.</strong> You will be asked to sign in again, and the
+account and the data below are then deleted at once. If you cannot use
+the app, email <strong><a
+href="mailto:banditplanespotter@gmail.com">banditplanespotter@gmail.com</a></strong>
+from the address used for the account with the subject "Delete my Bandit
+account" (instructions are also at <a
+href="https://ax3e.github.io/planespotter-privacy/delete-account.html"><span>https://ax3e.github.io/planespotter-privacy/delete-account.html</span></a>);
+we complete emailed requests within 30 days.</p>
+<p>Deletion covers your sign-in account, backups and backup photographs,
+leaderboard entry, profile, shared cards and their photograph copies,
+squad records, friends links and requests, and reactions you gave. If
+you signed in with Apple, Bandit's access to your Apple ID is revoked.
+Your cards and photographs on your phone stay there, and you can keep
+playing signed out. Signing out does not delete an account. Photographs
+in your own Google Drive backup, your phone's backups, reports about
+other players that we need to keep, and anything other people have
+already seen or saved are outside what deletion removes.</p>
+<h2 id="advertising-and-tracking">Advertising and tracking</h2>
+<p>Bandit shows no advertising, has no analytics or advertising SDKs,
+and does not track you across other companies' apps or websites.</p>
+<h2 id="changes-and-contact">Changes and contact</h2>
+<p>If this policy changes in a way that matters, we will publish the new
+version and date at the same address and, for material changes, take
+reasonable steps to tell you before they apply. Questions, requests and
+complaints: <strong><a
+href="mailto:banditplanespotter@gmail.com">banditplanespotter@gmail.com</a></strong>.</p>
+  </main>
+</body>
+</html>
